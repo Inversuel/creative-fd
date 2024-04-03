@@ -1,0 +1,30 @@
+.button {
+  width: 136px;
+  height: 40px;
+  padding: 12px 24px 12px 24px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #b06642 0%, #f4b17e 100%);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+}
+
+.button::before {
+  --size: 0;
+  content: "";
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, #fff 1%, transparent 100%);
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s ease,
+    height 0.2s ease;
+}
+.button:hover::before {
+  --size: 100px;
+}
